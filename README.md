@@ -2,7 +2,7 @@
 
 
 ## Cadastrar um Membro
-
+```
 http://localhost:8080/membro/save (POST)
 
 {
@@ -12,10 +12,10 @@ http://localhost:8080/membro/save (POST)
     "funcionario": "true"
 
 }
-
+```
 
 ## Listar um Membro
-
+```
 http://localhost:8080/membro/list (GET)
 
 [
@@ -27,7 +27,7 @@ http://localhost:8080/membro/list (GET)
         "funcionario": true
     }
 ]
-
+```
 ![](https://uploaddeimagens.com.br/images/004/487/907/original/form-projeto.jpg?1685473531)
 ![](https://uploaddeimagens.com.br/images/004/487/910/original/form-projeto.jpg?1685473587)
 ![](https://uploaddeimagens.com.br/images/004/487/912/original/form-projeto.jpg?1685473630)
