@@ -1,6 +1,6 @@
-<%@ include file="template/header.jspf"%>
-<%@ include file="template/navigation.jspf"%>
+<%@ include file="header.jspf"%>
+<%@ include file="navigation.jspf"%>
 <div class="container">
 Entre em contato com o suporte
 </div>
-<%@ include file="template/footer.jspf"%>
+<%@ include file="footer.jspf"%>

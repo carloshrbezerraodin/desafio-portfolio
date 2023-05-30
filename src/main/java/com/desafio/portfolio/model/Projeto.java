@@ -1,13 +1,18 @@
 package com.desafio.portfolio.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,12 +37,21 @@ public class Projeto {
 	@Column(name = "data_fim")
 	private Date dataFim;
 	private String descricao;
-	private String status;
+	@Enumerated(EnumType.ORDINAL)
+	private Status status;
 	private Float orcamento;
-	private String risco;
+	@Enumerated(EnumType.ORDINAL)
+	private Risco risco;
 	
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id")
-	private Pessoa pessoa;
+	private Pessoa gerente;
+	
+	@ManyToMany
+	@JoinTable(
+			  name = "membros", 
+			  joinColumns = @JoinColumn(name = "idpessoa"), 
+			  inverseJoinColumns = @JoinColumn(name = "idprojeto"))
+    Set<Pessoa> membros;
 	
 }

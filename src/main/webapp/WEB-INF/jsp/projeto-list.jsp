@@ -11,15 +11,21 @@
    <h3>Lista de Projetos</h3>
   </div>
   <div class="panel-body">
+  
+  	<div style="color:red">
+  		${erro}
+  	</div>
+  
    <table class="table table-striped">
     <thead>
      <tr>
       <th width="40%">Nome</th>
-      <th width="40%">Data Inicio</th>
-      <th width="40%">Data Prev Fim</th>
-      <th width="40%">Data Fim</th>
+      <th width="20%">Data Inicio</th>
+      <th width="20%">Data Prev Fim</th>
+      <th width="20%">Data Fim</th>
       <th width="20%">Status</th>
-       <th width="20%">Orcamento</th>
+      <th width="20%">Risco</th>
+      <th width="10%">Orcamento</th>
      </tr>
     </thead>
     <tbody>
