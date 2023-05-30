@@ -16,6 +16,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,7 +30,8 @@ import lombok.NoArgsConstructor;
 public class Projeto {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="projeto_sequence")
+	@SequenceGenerator(name="projeto_sequence", sequenceName="projeto_seq")
 	private Long id;
 	private String nome;
 	@Column(name = "data_inicio")
@@ -45,7 +47,7 @@ public class Projeto {
 	@Enumerated(EnumType.ORDINAL)
 	private Risco risco;
 	
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(referencedColumnName = "id", name = "idgerente")
 	private Pessoa gerente;
 	

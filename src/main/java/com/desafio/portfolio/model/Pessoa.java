@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +23,8 @@ import lombok.NoArgsConstructor;
 public class Pessoa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="pessoa_sequence")
+	@SequenceGenerator(name="pessoa_sequence", sequenceName="pessoa_seq")
 	private Long id;
 	private String nome;
 	@JsonFormat(pattern="dd/mm/yyyy")
