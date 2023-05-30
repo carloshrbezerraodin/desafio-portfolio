@@ -44,7 +44,6 @@ public class ProjetoController {
 	@GetMapping("/list")
 	public String list(Model model) {
 		model.addAttribute("projetos", projetoService.list());
-		
 		return "projeto-list";
 	}
 
@@ -65,7 +64,7 @@ public class ProjetoController {
 	
 
 	@RequestMapping(value = "/delete-projeto", method = RequestMethod.GET)
-	public String deleteTodo(@RequestParam long id, ModelMap model) {
+	public String deleteProjeto(@RequestParam long id, ModelMap model) {
 		try {
 			Projeto projeto = projetoService.getProjeto(id);
 			projetoService.delete(projeto);

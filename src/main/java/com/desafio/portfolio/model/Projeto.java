@@ -1,7 +1,9 @@
 package com.desafio.portfolio.model;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,15 +45,16 @@ public class Projeto {
 	@Enumerated(EnumType.ORDINAL)
 	private Risco risco;
 	
-	@ManyToOne
-	@JoinColumn(referencedColumnName = "id")
+	@ManyToOne()
+	@JoinColumn(referencedColumnName = "id", name = "idgerente")
 	private Pessoa gerente;
 	
+	@JsonBackReference("membros")
 	@ManyToMany
 	@JoinTable(
 			  name = "membros", 
-			  joinColumns = @JoinColumn(name = "idpessoa"), 
-			  inverseJoinColumns = @JoinColumn(name = "idprojeto"))
-    Set<Pessoa> membros;
+			  joinColumns = @JoinColumn(name = "idprojeto"), 
+			  inverseJoinColumns = @JoinColumn(name = "idpessoa"))
+    List<Pessoa> membros;
 	
 }

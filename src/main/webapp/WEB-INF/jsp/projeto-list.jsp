@@ -19,9 +19,8 @@
    <table class="table table-striped">
     <thead>
      <tr>
-      <th width="40%">Nome</th>
+      <th width="20%">Nome</th>
       <th width="20%">Data Inicio</th>
-      <th width="20%">Data Prev Fim</th>
       <th width="20%">Data Fim</th>
       <th width="20%">Status</th>
       <th width="20%">Risco</th>
@@ -34,11 +33,10 @@
        <td>${projeto.nome}</td>
        <td><fmt:formatDate value="${projeto.dataInicio}"
          pattern="dd/MM/yyyy" /></td>
-         <td><fmt:formatDate value="${projeto.dataPrevisaoFim}"
-         pattern="dd/MM/yyyy" /></td>
          <td><fmt:formatDate value="${projeto.dataFim}"
          pattern="dd/MM/yyyy" /></td>
          <td>${projeto.status}</td>
+         <td>${projeto.risco}</td>
          <td>${projeto.orcamento}</td>
        <td><a type="button" class="btn btn-success"
         href="update-projeto?id=${projeto.id}">Editar</a>

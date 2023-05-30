@@ -25,7 +25,7 @@
 						<form:label path="projeto">Projeto</form:label>
 							<form:select path="projeto" class="form-control">
 								<form:option value="">SELECIONE UM PROJETO</form:option>
-								<form:options items="${projetos}" itemLabel="nome" ></form:options>
+								<form:options items="${projetos}" itemLabel="nome"></form:options>
 							</form:select>
 							<form:errors path="projeto" cssClass="text-warning" />
 						</fieldset>

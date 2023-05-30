@@ -18,8 +18,9 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th width="40%">Projeto</th>
-						<th width="40%">Membro</th>
+						<th width="30%">Projeto</th>
+						<th width="50%">Membro</th>
+						<th width="20%">Acao</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,16 +28,12 @@
 						<tr>
 							<td>${projeto.nome}</td>
 							<td>
-								<c:forEach var="membro" items="${projeto.membros}">
-									<tr>
-										<td>${membro.nome}</td>
-									</tr>
+								 <c:forEach var="pessoa" items="${projeto.membros}">
+										${pessoa.nome}
 								</c:forEach>
 							</td>
 							<td><a type="button" class="btn btn-success"
-								href="update-projeto?id=${membro.id}">Editar</a> <a
-								type="button" class="btn btn-warning"
-								href="delete-projeto?id=${membro.id}">Deletar</a></td>
+								href="update-associar-projeto?id=${projeto.id}">Editar</a>
 						</tr>
 					</c:forEach>
 				</tbody>
