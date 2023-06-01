@@ -41,10 +41,10 @@ public class Projeto {
 	@Column(name = "data_fim")
 	private Date dataFim;
 	private String descricao;
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	private Float orcamento;
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private Risco risco;
 	
 	@ManyToOne
