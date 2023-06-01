@@ -13,7 +13,7 @@
 
 					<fieldset class="form-group">
 						<form:label path="membros">Membro</form:label>
-							<form:select path="membros" class="form-control" multiple="true">
+							<form:select path="membros" class="form-control" multiple="true" required="required">
 								<form:option value="">SELECIONE UM MEMBRO</form:option>
 								<form:options items="${membros}" itemLabel="nome" ></form:options>
 							</form:select>
@@ -23,7 +23,7 @@
 						
 						<fieldset class="form-group">
 						<form:label path="projeto">Projeto</form:label>
-							<form:select path="projeto" class="form-control">
+							<form:select path="projeto" class="form-control" required="required">
 								<form:option value="">SELECIONE UM PROJETO</form:option>
 								<form:options items="${projetos}" itemLabel="nome"></form:options>
 							</form:select>

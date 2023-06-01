@@ -21,7 +21,7 @@
 						
 						<fieldset class="form-group">
 						<form:label path="gerente">Gerente</form:label>
-							<form:select path="gerente" class="form-control">
+							<form:select path="gerente" class="form-control" required="required">
 								<form:option value="">SELECIONE UM GERENTE</form:option>
 								<form:options items="${gerentes}" itemLabel="nome" ></form:options>
 							</form:select>
@@ -60,7 +60,7 @@
 
 						<fieldset class="form-group">
 							<form:label path="status">status</form:label>
-							<form:select path="status" class="form-control">
+							<form:select path="status" class="form-control" required="required">
 								<form:option value="">SELECIONE UM STATUS</form:option>
 								<form:options items="${statusList}" itemLabel="descricao"></form:options>
 							</form:select>
@@ -69,14 +69,14 @@
 
 						<fieldset class="form-group">
 							<form:label path="orcamento">Orcamento</form:label>
-							<form:input path="orcamento" type="text" class="form-control"
+							<form:input path="orcamento" type="number" class="form-control"
 								required="required" />
 							<form:errors path="orcamento" cssClass="text-warning" />
 						</fieldset>
 
 						<fieldset class="form-group">
 						<form:label path="status">risco</form:label>
-							<form:select path="risco" class="form-control">
+							<form:select path="risco" class="form-control" required="required">
 								<form:option value="">SELECIONE UM RISCO</form:option>
 								<form:options items="${riscoList}" itemLabel="descricao" ></form:options>
 							</form:select>
